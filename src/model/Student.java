@@ -57,10 +57,21 @@ public class Student {
 		
 	}
 	
-	
 	//Bezargumenta knstruktors
+	public Student() {
+		setStudID();
+		setName("Valdis");
+		setSurname("Eizans");
+		setPersonCode("123456-78541");
+	}
 	
 	//Argumenta konstruktors
+	public Student(String inputName, String inputSurname, String inputPersonCode) {
+		setStudID();
+		setName(inputName);
+		setSurname(inputSurname);
+		setPersonCode(inputPersonCode);
+	}
 	
 	
 	//toString funkcijas
