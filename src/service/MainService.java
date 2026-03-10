@@ -25,7 +25,7 @@ public class MainService {
 		Professor prof2 = new Professor("Agris","Ziemelis","125874-98745",ProfDegree.barchelor);
 		System.out.println(prof2);
 
-		Professor prof3 = new Professor("Agr1s","ziemelis","125874-98745",null);
+		Professor prof3 = new Professor("Agr1s","ziemelis","12574-98745",null);
 		System.out.println(prof3);
 	}
 

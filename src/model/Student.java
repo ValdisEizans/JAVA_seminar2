@@ -57,7 +57,7 @@ public class Student {
 		
 	}
 	
-	//Bezargumenta knstruktors
+	//Bezargumenta konstruktors
 	public Student() {
 		setStudID();
 		setName("Valdis");
