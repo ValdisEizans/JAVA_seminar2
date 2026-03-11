@@ -2,9 +2,9 @@ package model;
 
 public class Person {
 	//Mainigie
-	private String name;
-	private String surname;
-	private String personCode;
+	protected String name;
+	protected String surname;
+	protected String personCode;
 	
 	//Geteri 
 	public String getName() {

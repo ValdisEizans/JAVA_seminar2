@@ -2,12 +2,9 @@ package model;
 
 import model.enums.ProfDegree;
 
-public class Professor {
+public class Professor extends Person{
 	//Mainigie
 	private long profId;
-	private String name;
-	private String surname;
-	private String personCode;
 	private ProfDegree degree;
 
 	//Paligmainigais bez setera/getera
@@ -17,15 +14,6 @@ public class Professor {
 	public long getProfID() {
 		return profId;
 	}
-	public String getName() {
-		return name;
-	}
-	public String getSurname() {
-		return surname;
-	}
-	public String getPersonCode() {
-		return personCode;
-	}
 	public ProfDegree getDegree() {
 		return degree;
 	}
@@ -34,32 +22,6 @@ public class Professor {
 	public void setProfID() {
 		profId = counter;
 		counter++;
-	}
-	public void setName(String inputName) {
-		if((inputName != null) && (!inputName.isEmpty()) && (inputName.matches("[A-Z]{1}[a-z]{2,15}([*]{1}[A-Z]{1}[a-z]{2,15})?")) ) {
-			name = inputName;
-		}
-		else{
-			name = "Unknown";
-		}
-	}
-	public void setSurname(String inputSurname) {
-		if((inputSurname != null) && (!inputSurname.isEmpty()) && (inputSurname.matches("[A-Z]{1}[a-z]{2,25}([-]{1}[A-Z]{1}[a-z]{2,25})?")) ) {
-			surname = inputSurname;
-		}
-		else{
-			surname = "Unknown";
-		}
-	}
-	public void setPersonCode(String inputPersoncode) {
-		//TODO regex maska dienam un menesiem
-		if ((inputPersoncode != null) && (!inputPersoncode.isEmpty()) && (inputPersoncode.matches("[0-9]{6}[-]{1}[0-9]{5}")) ) {
-			personCode = inputPersoncode;
-		}
-		else {
-			personCode = "Unknown";
-		}
-		
 	}
 	public void setDegree(ProfDegree inputDegree) {
 		if(inputDegree != null) {
@@ -72,19 +34,15 @@ public class Professor {
 	
 	//Bezargumenta konstruktors
 	public Professor() {
+		super(); // Izsaucas automatiski Person konstruktors, JABUT KODA 1. RINDA!!!!
 		setProfID();
-		setName("Janis");
-		setSurname("Kalnins");
-		setPersonCode("123456-12345");
 		setDegree(ProfDegree.master);
 	}
 	
 	//Argumenta konstruktors
 	public Professor(String inputName, String inputSurname, String inputPersonCode, ProfDegree inputDegree) {
+		super(inputName,inputSurname,inputPersonCode); // Izsaucas automatiski Person konstruktors, JABUT KODA 1. RINDA!!!!
 		setProfID();
-		setName(inputName);
-		setSurname(inputSurname);
-		setPersonCode(inputPersonCode);
 		setDegree(inputDegree);
 	}
 	
