@@ -10,6 +10,7 @@ public class MainService {
 
 	public static void main(String[] args) {
 		//datu tips, nosaukums, new un tad konstruktors
+		System.out.println("--------------- Studenti: ------------------");
 		Student stud1 = new Student();
 		System.out.println(stud1);
 		
@@ -19,7 +20,7 @@ public class MainService {
 		Student stud3 = new Student("Gunt1s","egltis",null);
 		System.out.println(stud3);
 		
-		System.out.println("Profesori:");
+		System.out.println("--------------- Profesori: ------------------");
 		
 		Professor prof1 = new Professor();
 		System.out.println(prof1);
