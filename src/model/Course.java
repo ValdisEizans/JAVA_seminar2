@@ -6,10 +6,10 @@ public class Course {
 	private long courseId;
 	private String title;
 	private int creditPoints;
-	private Professor professor;
+	private Professor professor;//TO DO izveidot iespeju, ka vairaki pasniedzeji pasniedz vienu kursu
 	
 	//Paligmainigais bez setera/getera
-	private static long counter = 0;
+	private static long counter = 20000;
 	
 	//Geteri 	
 	public long getcourseId() {
@@ -31,7 +31,7 @@ public class Course {
 		counter++;
 	}
 	public void setTitle(String inputTitle) {
-		if((inputTitle != null) && (!inputTitle.isEmpty()) && (inputTitle.matches("[A-Z]{1}[a-z]{2,30}[ ]{1}[a-z]{2,30}[ ]{1}[a-z]{2,30}[ ]{1}[a-z]{2,30}")) ) {
+		if((inputTitle != null) && (inputTitle.matches("[A-Z]{1}[A-Za-z0-9 ]{1,50}")) ) {
 			title = inputTitle;
 		}
 		else{
@@ -39,11 +39,11 @@ public class Course {
 		}
 	}
 	public void setCreditPoints(int inputCreditPoints) {
-		if((inputCreditPoints != 0) && (inputCreditPoints <= 240 )) {
+		if((inputCreditPoints >= 1) && (inputCreditPoints <= 30 )) {
 			creditPoints = inputCreditPoints;
 		}
 		else{
-			creditPoints = 0;
+			creditPoints = 1;
 		}
 	}
 	public void setProfessor(Professor inputProfessor) {
@@ -51,9 +51,8 @@ public class Course {
 			professor = inputProfessor;
 		}
 		else {
-			professor = null;
+			professor = new Professor();
 		}
-		
 	}
 	
 	//Bezargumenta konstruktors
@@ -75,7 +74,7 @@ public class Course {
 	//toString funkcija
 	@Override //var nerakstit
 	public String toString() {
-		String result = courseId + ": " + title + " " + creditPoints + professor;
+		String result = courseId + ": " + title + " " + creditPoints + " KP " + professor.getName() + " " + professor.getSurname();
 		return result;
 	}
 	

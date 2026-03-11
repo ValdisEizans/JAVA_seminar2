@@ -28,13 +28,19 @@ public class MainService {
 		Professor prof2 = new Professor("Agris","Ziemelis","125874-98745",ProfDegree.barchelor);
 		System.out.println(prof2);
 
-		Professor prof3 = new Professor("Agr1s","ziemelis","12574-98745",null);
+		Professor prof3 = new Professor("Andris","Gobzems","125784-98745",ProfDegree.phd);
 		System.out.println(prof3);
 		
-		Course course1 = new Course("Fizika",20,prof2);
+		System.out.println("--------------- Kursi: ------------------");
+
+		Course course1 = new Course("Fizika",16,prof1);
+		System.out.println(course1);
+		Course course2 = new Course("Augstaka matematika",32,prof3);
+		System.out.println(course2);
+		Course course3 = new Course("Ekonomika",16,prof2);
+		System.out.println(course3);
 		
-		Grade grade1 = new Grade(5,stud2,course1);
-		System.out.println(grade1);
+		//System.out.println(grade1);
 
 	}
 
