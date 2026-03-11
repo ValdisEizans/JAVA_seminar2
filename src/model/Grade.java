@@ -51,7 +51,7 @@ public class Grade {
 			course = inputCourse;
 		}
 		else{
-			course = null;
+			course = new Course();
 		}
 	}
 	

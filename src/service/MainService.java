@@ -33,7 +33,7 @@ public class MainService {
 		
 		System.out.println("--------------- Kursi: ------------------");
 
-		Course course1 = new Course("Fizika",16,prof1);
+		Course course1 = new Course();
 		System.out.println(course1);
 		Course course2 = new Course("Augstaka matematika",32,prof3);
 		System.out.println(course2);

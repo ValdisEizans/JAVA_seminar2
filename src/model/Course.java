@@ -5,7 +5,7 @@ public class Course {
 	//Mainigie
 	private long courseId;
 	private String title;
-	private int creditPoints;
+	private byte creditPoints;
 	private Professor professor;//TO DO izveidot iespeju, ka vairaki pasniedzeji pasniedz vienu kursu
 	
 	//Paligmainigais bez setera/getera
@@ -18,7 +18,7 @@ public class Course {
 	public String getTitle() {
 		return title;
 	}
-	public int getCreditPoints() {
+	public byte getCreditPoints() {
 		return creditPoints;
 	}
 	public Professor getProfessor() {
@@ -38,7 +38,7 @@ public class Course {
 			title = "Unknown";
 		}
 	}
-	public void setCreditPoints(int inputCreditPoints) {
+	public void setCreditPoints(byte inputCreditPoints) {
 		if((inputCreditPoints >= 1) && (inputCreditPoints <= 30 )) {
 			creditPoints = inputCreditPoints;
 		}
@@ -58,16 +58,16 @@ public class Course {
 	//Bezargumenta konstruktors
 	public Course() {
 		setCourseId();
-		setTitle("Augstaka matematika");
-		setCreditPoints(15);
-		setProfessor(professor);
+		setTitle("Logika");
+		setCreditPoints((byte)15);
+		setProfessor(new Professor());
 	}
 	
 	//Argumenta konstruktors
-	public Course(String inputTitle, int inputCreditPoints, Professor inputProfessor) {
+	public Course(String inputTitle, byte inputCreditPoints, Professor inputProfessor) {
 		setCourseId();
 		setTitle(inputTitle);
-		setCreditPoints(inputCreditPoints);
+		setCreditPoints((byte)inputCreditPoints);
 		setProfessor(inputProfessor);
 	}
 	
