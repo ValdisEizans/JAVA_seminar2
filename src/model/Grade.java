@@ -74,7 +74,7 @@ public class Grade {
 	//toString funkcija
 	@Override //var nerakstit
 	public String toString() {
-		String result = gradeId + ": " + gradeValue + " " + student + course;
+		String result = gradeId + ": " + student.getName().charAt(0) + "." + student.getSurname() + " nopelnija " + gradeValue + " " + course.getTitle();
 		return result;
 	}
 	
