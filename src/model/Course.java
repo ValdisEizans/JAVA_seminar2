@@ -38,9 +38,9 @@ public class Course {
 			title = "Unknown";
 		}
 	}
-	public void setCreditPoints(byte inputCreditPoints) {
+	public void setCreditPoints(int inputCreditPoints) {
 		if((inputCreditPoints >= 1) && (inputCreditPoints <= 30 )) {
-			creditPoints = inputCreditPoints;
+			creditPoints = (byte)inputCreditPoints;
 		}
 		else{
 			creditPoints = 1;
@@ -67,14 +67,14 @@ public class Course {
 	public Course(String inputTitle, byte inputCreditPoints, Professor inputProfessor) {
 		setCourseId();
 		setTitle(inputTitle);
-		setCreditPoints((byte)inputCreditPoints);
+		setCreditPoints(inputCreditPoints);
 		setProfessor(inputProfessor);
 	}
 	
 	//toString funkcija
 	@Override //var nerakstit
 	public String toString() {
-		String result = courseId + ": " + title + " " + creditPoints + " KP " + professor.getName() + " " + professor.getSurname();
+		String result = courseId + ": " + title + " (" + creditPoints + ")KP " + professor.getName().charAt(0) + ". " + professor.getSurname();
 		return result;
 	}
 	

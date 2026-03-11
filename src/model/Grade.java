@@ -4,7 +4,7 @@ package model;
 public class Grade {
 	//Mainigie
 	private long gradeId;
-	private int value;
+	private byte gradeValue;
 	private Student student;
 	private Course course;
 	
@@ -15,8 +15,8 @@ public class Grade {
 	public long getgradeId() {
 		return gradeId;
 	}
-	public int getValue() {
-		return value;
+	public byte getGradeValue() {
+		return gradeValue;
 	}
 	public Student getStudent() {
 		return student;
@@ -30,12 +30,12 @@ public class Grade {
 		gradeId = counter;
 		counter++;
 	}
-	public void setValue(int inputValue) {
-		if((inputValue > 0) && (inputValue < 10)) {
-			value = inputValue;
+	public void setGradeValue(byte inputGradeValue) {
+		if((inputGradeValue >= 1) && (inputGradeValue <= 10)) {
+			gradeValue = inputGradeValue;
 		}
 		else{
-			value = 0;
+			gradeValue = 1;
 		}
 	}
 	public void setStudent(Student inputStudent) {
@@ -43,7 +43,7 @@ public class Grade {
 			student = inputStudent;
 		}
 		else{
-			student = null;
+			student = new Student();
 		}
 	}
 	public void setCourse(Course inputCourse) {
@@ -58,15 +58,15 @@ public class Grade {
 	//Bezargumenta konstruktors
 	public Grade() {
 		setGradeId();
-		setValue(0);
-		setStudent(student);
-		setCourse(course);
+		setGradeValue((byte)4);
+		setStudent(new Student());
+		setCourse(new Course());
 	}
 	
 	//Argumenta konstruktors
-	public Grade(int inputValue, Student inputStudent, Course inputCourse) {
+	public Grade(byte inputValue, Student inputStudent, Course inputCourse) {
 		setGradeId();
-		setValue(inputValue);
+		setGradeValue(inputValue);
 		setStudent(inputStudent);
 		setCourse(inputCourse);
 	}
@@ -74,7 +74,7 @@ public class Grade {
 	//toString funkcija
 	@Override //var nerakstit
 	public String toString() {
-		String result = gradeId + ": " + value + " " + student + course;
+		String result = gradeId + ": " + gradeValue + " " + student + course;
 		return result;
 	}
 	
