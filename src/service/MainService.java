@@ -96,6 +96,27 @@ public class MainService {
 		throw new Exception("Students ar ID" + id + " neeksiste!"); 
 	}
 	
+	//Update students name and/or surname
+	public static Student updateById(long id, String inputName, String inputSurname) throws Exception{
+		Student studentForUpdating = getStudentById(id);
+		
+		//TO DO parbaudit ienakosos parametrus
+		if(!studentForUpdating.getName().equals(inputName)) {
+			studentForUpdating.setName(inputName);
+		}
+		if(!studentForUpdating.getSurname().equals(inputSurname)) {
+			studentForUpdating.setSurname(inputSurname);
+		}
+		
+		return studentForUpdating;
+	}
+	
+	//Delete student by ID
+	public static void deleteById (long id) throws Exception{
+		Student studentForDeleting = getStudentById(id);
+		allStudents.remove(studentForDeleting);
+	}
+	
 	
 
 }
