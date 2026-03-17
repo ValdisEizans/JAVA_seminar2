@@ -80,7 +80,16 @@ public class MainService {
 			System.out.println(allStudents);
 			deleteById(4);
 			System.out.println(allStudents);
+		}
+		catch (Exception e){
+			System.out.println(e.getMessage());
+		}
 
+		System.out.println();
+		System.out.println("--------------- Filtra testesana: ------------------");
+		System.out.println();
+		try {
+			System.out.println(filterProfessorByDegree(ProfDegree.barchelor));
 		}
 		catch (Exception e){
 			System.out.println(e.getMessage());
@@ -134,6 +143,28 @@ public class MainService {
 		Student studentForDeleting = getStudentById(id);
 		allStudents.remove(studentForDeleting);
 	}
+	
+	//Izfiltret un atgriezt visus profesorus, kuru degree ir master
+	public static ArrayList<Professor> filterProfessorByDegree(ProfDegree inputDegree) throws Exception{
+		if(inputDegree == null) {
+			throw new Exception("Neeksistejos grads");
+		}
+		
+		ArrayList<Professor> filteredProfessors = new ArrayList<Professor>();
+		
+		for(Professor tempP : allProfessors) {
+			if(tempP.getDegree().equals(inputDegree)) {
+				filteredProfessors.add(tempP);
+			}
+		}
+		if(filteredProfessors.isEmpty()) {
+			throw new Exception("Sistema nav profesoru ar " + inputDegree + " gradu!");
+		}
+		else {
+			return filteredProfessors;
+		}
+	}
+	
 	
 	
 
